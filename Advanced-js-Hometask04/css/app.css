@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.column{
+    width: 350px;
+    height: auto;
+    background-color: #DDDDDD;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+.sort-btn{
+  width: 15%;
+}
+.header{
+ width: 80%;
+}
+.card-list__container{
+    min-width: 300px;
+    min-height: 100px;
+    padding: 0 5px;
+}
+.card{
+    list-style: none;
+    width: 100%;
+    background-color: #ffff;
+    height: 90px;
+    margin: 10px 0;
+    /* //margin: 1rem; */
+}
+.marker{
+    background-color: blue;
+    width: 50px;
+    height: 10px;
+}
+.addCardBtn{
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+.inactive{
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+
+.dragging{
+   background-color: blue;
+}  
+#add-column__btn{
+    background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
