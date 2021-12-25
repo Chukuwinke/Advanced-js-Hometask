@@ -1,0 +1,16 @@
+.episode-container{
+    border: 3px solid grey;
+    margin-bottom: 10px;
+    background-color: #F3C892;
+}
+.characters{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.characters-container{
+    border-top: 1px solid black;
+}
+.character{
+    margin: 0 20px;
+}

@@ -13,6 +13,7 @@ window.onload = () => {
             console.log(results)
             results.forEach(element => {
                 let movieContainer = document.createElement('div')
+                movieContainer.className='episode-container'
                movieContainer.innerHTML = `
                <div>
                     <h2>${element.title}</h2>
@@ -21,45 +22,32 @@ window.onload = () => {
                         <li>${element.opening_crawl}</li>
                     </ul>
                 </div>
-                <div>
+                <div class="characters-container">
                     <h3>list of characters</h3>
-                    <ul>
+                    <ul class="characters" id="characters-episode__${element.episode_id}">
+                    </ul>
+                </div>
                 
                 `
                 for(const character of element.characters ){
-                    //console.log(character)
-
                     const xhr = new XMLHttpRequest();
                     xhr.open('GET', character, true);
                     xhr.onload = () =>{
                         if(xhr.status == 200){
                            //console.log(JSON.parse(xhr.responseText))
                            const {name} = JSON.parse(xhr.responseText)
+                           const characterContainer = document.getElementById(`characters-episode__${element.episode_id}`)
                            console.log(name)
-                           movieContainer.innerHTML += `<li> ${name} </li>`
+                           characterContainer.innerHTML += `<li class="character"> ${name} </li>`
                         }
                     }
                     xhr.send();
 
                 }
-                movieContainer.innerHTML += '</ul> </div>'
+                
                 main.appendChild(movieContainer)
             })
-
-            
         }
     }
     xhr.send();
 }
-
-//let allMovies = movies.results.map(results => results)
-            // console.log(allMovies)
-            // allMovies.forEach(element => {
-            //     let movieContainer = document.createElement('div')
-            //     movieContainer.innerHTML = `
-            //      <div>
-            //          <h2>${element.title}</h2>
-            //      </div>
-            //     `
-            //     main.appendChild(movieContainer)
-            // });
